@@ -4,6 +4,10 @@
 
 using namespace std;
 
+Media::Media() {
+  //never should be called but vector might need it
+}
+
 Media::Media(char* newtitle, int newyear) {
   title = new char[80];
   int year;
