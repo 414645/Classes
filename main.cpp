@@ -96,7 +96,7 @@ void addMedia(vector<Media*> &mediaList)
   cout << "If you would like to add a Movie type 3" << endl;
   cin >> number;
 
-  //default media
+  //default media questions
   cout << "please enter the title of the videogame" << endl;
   cin >> title;
   //cin.get(title, 81); //80 chars
@@ -150,6 +150,7 @@ void addMedia(vector<Media*> &mediaList)
     Videogame* newchild = new Videogame(title, year, publisher, rating);
     mediaList.push_back(newchild);
     //add it to vector now since otherwise it is out of scope
+    
   }
   else if (number == 2) {
     //title, artist, year, duration, publisher
@@ -184,31 +185,35 @@ void searchMedia(vector<Media*> &mediaList)
   
   cin >> number;
   
-  if (number = 1) {
+  if (number == 1) {
     cout << "Please type the title you are looking for" << endl;
     cin >> title;
   }
-  else if (number == 2) {
+  if (number == 2) {
     cout << "Please type the year you are looking for" << endl;
     cin >> year;
   }
-  
+
   for (int a = 0; a < mediaList.size(); a++) {
-    if (number = 1) {
-      //if ((mediaList[a]->getTitle()) == title) {
-      //	cout << "sucess " << mediaList[a]->getTitle() << endl;
-      //}
+    
+    if (number == 1) { 
+      if (strcmp(mediaList[a]->getTitle(), title) == 0) {
+      	cout << mediaList[a]->getTitle() << ", ";
+	cout << mediaList[a]->getYear() << ", ";
+	
+      }
     }
-    else if (number == 2) {
-      //if (mediaList[a]->getYear() == year) {
-      //	cout << "yay" << endl;
-      //}
+    else if (number == 2) {	
+      if (mediaList[a]->getYear() == year) {
+      	//same cout as above.
+      }
     }
   }
 } 
 
 void deleteMedia(vector<Media*> &mediaList)
 {
-  //search as above
+  //same search as above
   //double check on selected resultes
+  //call a deconstuctor
 }

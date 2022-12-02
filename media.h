@@ -11,7 +11,7 @@ public:
   Media(char*, int);
   char* getTitle();
   int getYear();
-private:
+protected:
   char* title;
   int year;
 };

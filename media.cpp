@@ -10,8 +10,7 @@ Media::Media() {
 
 Media::Media(char* newtitle, int newyear) {
   title = new char[80];
-  int year;
-  title = strcpy(title, newtitle);
+  strcpy(title, newtitle);
   year = newyear;
 }
 

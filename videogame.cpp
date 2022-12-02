@@ -9,15 +9,13 @@ Videogame::Videogame() {
 }
 
 Videogame::Videogame(char* newtitle, int newyear,
-		     char* newpublisher, char* newrating) {
-  //title = new char[80];
-  //int year;
+		     char* newpublisher, char* newrating
+		     ):Media(newtitle, newyear){
+  
   publisher = new char[80];
   rating = new char[80];
-  //title = strcpy(title, newtitle);
-  //year = newyear;
-  publisher = strcpy(publisher, newpublisher);
-  rating = strcpy(rating, newrating);
+  strcpy(publisher, newpublisher);
+  strcpy(rating, newrating);
 }
 
 char* Videogame::getPublisher() {
