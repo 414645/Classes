@@ -14,6 +14,11 @@ Media::Media(char* newtitle, int newyear) {
   year = newyear;
 }
 
+Media::~Media() {
+  free(title);
+  //free(year); //it is int not pointer so no free
+}
+
 char* Media::getTitle() {
   return title;
 }
@@ -21,3 +26,4 @@ char* Media::getTitle() {
 int Media::getYear() {
   return year;
 }
+

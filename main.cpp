@@ -194,20 +194,43 @@ void searchMedia(vector<Media*> &mediaList)
     cin >> year;
   }
 
+  int avalue = -1;
   for (int a = 0; a < mediaList.size(); a++) {
     
-    if (number == 1) { 
+    if (number == 1) {
+      if (strcmp(mediaList[a]->getTitle(), title) == 0) {
+	avalue = a;
+      }
+      /*
       if (strcmp(mediaList[a]->getTitle(), title) == 0) {
       	cout << mediaList[a]->getTitle() << ", ";
 	cout << mediaList[a]->getYear() << ", ";
+	//if
 	
+	cout << mediaList[a]->getPublisher << endl;
+	//Videogame* a = (static_cast<Videogame>(mediaList[a]));
+	//cout << videoGame->getPublisher << " yay!" << endl;
+	//cout << (static_cast<Videogame*>(mediaList[a])->getPublisher)) << ", ";
+
+	//end if
+
+	//virtual class woould be add the virtual keyword to Media
+	//and then move the actua; function to the child classes so they
+	//have all of the information for cout
       }
+      */
     }
     else if (number == 2) {	
       if (mediaList[a]->getYear() == year) {
-      	//same cout as above.
+	avalue = a;
+	//same cout as above.
       }
     }
+    if (avalue > -1) {
+      cout << "found t" << endl;
+    }
+
+    
   }
 } 
 
