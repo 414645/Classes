@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Videogame:Media {
+class Videogame: public Media {
 public:
   Videogame();
   Videogame(char*, int, char*, char*);

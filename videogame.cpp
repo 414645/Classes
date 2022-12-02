@@ -24,6 +24,6 @@ char* Videogame::getPublisher() {
   return publisher;
 }
 
-char* Viedogame::getRating() {
+char* Videogame::getRating() {
   return rating;
 }
