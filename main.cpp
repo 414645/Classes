@@ -7,9 +7,9 @@
 
 using namespace std;
 
-void addMedia(vector<Media> &mediaList);
-void searchMedia(vector<Media> &mediaList);
-void deleteMedia(vector<Media> &mediaList);
+void addMedia(vector<Media*> &mediaList);
+void searchMedia(vector<Media*> &mediaList);
+void deleteMedia(vector<Media*> &mediaList);
 //void quit(); just quit
 
 int main() {
@@ -23,8 +23,7 @@ int main() {
     }
   bool quit = false;
 
-  //media*
-  vector<Media> mediaList;
+  vector<Media*> mediaList;
   
   //User input, what do you want to do?
   while (quit == false) {
@@ -79,7 +78,7 @@ int main() {
   
 }
 
-void addMedia(vector<Media> &mediaList)
+void addMedia(vector<Media*> &mediaList)
 {
   //variables needed (yes they could be resused but speed is not a problem)
   int number = 0;
@@ -149,7 +148,7 @@ void addMedia(vector<Media> &mediaList)
   if (number == 1) {
     //title, year, publisher, rating
     Videogame* newchild = new Videogame(title, year, publisher, rating);
-    mediaList.push_back(*newchild);
+    mediaList.push_back(newchild);
     //add it to vector now since otherwise it is out of scope
   }
   else if (number == 2) {
@@ -166,7 +165,7 @@ void addMedia(vector<Media> &mediaList)
   //mediaList.push_back(*newchild);
 }
 
-void searchMedia(vector<Media> &mediaList)
+void searchMedia(vector<Media*> &mediaList)
 {
   //search by title or year? (if statement)
   //get search term(cin)
@@ -208,7 +207,7 @@ void searchMedia(vector<Media> &mediaList)
   }
 } 
 
-void deleteMedia(vector<Media> &mediaList)
+void deleteMedia(vector<Media*> &mediaList)
 {
   //search as above
   //double check on selected resultes
