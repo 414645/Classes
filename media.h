@@ -8,9 +8,10 @@ using namespace std;
 class Media {
 public:
   Media();
-  Media(char*, int);
-  char* getTitle();
-  int getYear();
+  Media(char* newtitle, int newyear);
+  ~Media(); //deconstructor delaration
+  virtual char* getTitle();
+  virtual int getYear();
 protected:
   char* title;
   int year;

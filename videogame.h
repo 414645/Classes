@@ -9,9 +9,12 @@ using namespace std;
 class Videogame: public Media {
 public:
   Videogame();
-  Videogame(char*, int, char*, char*);
-  //char* getTitle();
-  //int getYear();
+  Videogame(char* newtitle, int newyear,
+	    char* newpublisher, char* newrating);
+  ~Videogame(); //deconstructor declaration
+  //virtual
+  virtual char* getTitle();
+  virtual int getYear();
   char* getPublisher();
   char* getRating();
 private:
