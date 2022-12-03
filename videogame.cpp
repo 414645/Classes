@@ -18,10 +18,24 @@ Videogame::Videogame(char* newtitle, int newyear,
   strcpy(rating, newrating);
 }
 
+Videogame::~Videogame() {
+  free(publisher);
+  free(rating);
+}
+
 char* Videogame::getPublisher() {
   return publisher;
 }
 
 char* Videogame::getRating() {
   return rating;
+}
+
+
+char* Media::getTitle() {
+  return title;
+}
+
+int Media::getYear() {
+  return year;
 }

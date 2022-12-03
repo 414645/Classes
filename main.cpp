@@ -13,10 +13,10 @@ void deleteMedia(vector<Media*> &mediaList);
 //void quit(); just quit
 
 int main() {
-  //cout << "hello world" << endl;
+  cout << "hello world" << endl;
   
   //initialize vaiables
-  char input[6];
+  char* input = new char[6];
   for (int a = 0; a < 6; a++)
     {
       input[a] = ' ';
@@ -28,9 +28,9 @@ int main() {
   //User input, what do you want to do?
   while (quit == false) {
     //cin.ignore(80,'\n'); 
-    //cin.get(input, 7); //6 chars
+    cin.getline(input, 6); //6 chars
     //cin.ignore(80,'\n');
-    cin >> input;
+    //cin >> input;
     
     //check for each command and run the correct function
     if (input[0] == 'A' &&
@@ -82,23 +82,24 @@ void addMedia(vector<Media*> &mediaList)
 {
   //variables needed (yes they could be resused but speed is not a problem)
   int number = 0;
-  char title[80];
+  char* title = new char[80];
   int year;
-  char publisher[80];
-  char rating[80];
-  char artist[80];
-  char duration[80]; //char since ##:##
-  char director[80];
+  char* publisher = new char[80];
+  char* rating = new char[80];
+  char* artist = new char[80];
+  char* duration = new char[80]; //char since ##:##
+  char* director = new char[80];
   
   //What type of media
   cout << "If you would like to add a Video Game type 1" << endl;
   cout << "If you would like to add a Song(Music) type 2" << endl;
   cout << "If you would like to add a Movie type 3" << endl;
+  //cin.ignore
   cin >> number;
 
   //default media questions
   cout << "please enter the title of the videogame" << endl;
-  cin >> title;
+  cin.getline(title, 80);
   //cin.get(title, 81); //80 chars
   //cin.ignore(80,'\n');
   
@@ -113,42 +114,42 @@ void addMedia(vector<Media*> &mediaList)
   if (number == 1 || number == 2)
     {
       cout << "please enter the publisher" << endl;
-      cin >> publisher;
+      cin.getline(publisher, 80);
     }
   
   //rating 1,3
   if (number == 1 || number == 3)
     {
       cout << "please enter the rating" << endl;
-      cin >> rating;
+      cin.getline(rating, 80);
     }
   
   //artist 2
   if (number == 2)
     {
       cout << "please enter the artist" << endl;
-      cin >> artist;
+      cin.getline(artist, 80);
     }
   
   //duration 2,3
   if (number == 2 || number == 3)
     {
       cout << "please enter the duration" << endl;
-      cin >> duration;
+      cin.getline(duration, 80);
     }
   
   //director 3
   if (number == 3)
     {
       cout << "please enter the director" << endl;
-      cin >> director;
+      cin.getline(director, 80);
     }
 
   //make the information into a class
   if (number == 1) {
     //title, year, publisher, rating
-    Videogame* newchild = new Videogame(title, year, publisher, rating);
-    mediaList.push_back(newchild);
+    //Videogame* newchild = new Videogame(title, year, publisher, rating);
+    //mediaList.push_back(newchild);
     //add it to vector now since otherwise it is out of scope
     
   }
